@@ -1,7 +1,7 @@
 #whoami.ps1 | where {$_.type -eq "Group"} | Select Groupname | Sort GroupName
 
 whomi /groups/ fo list | Select -Skip 4 | Where \{$_} |
-foreach-object -Begin \{$i=0; $hash=@\{\}\} -Process {
+foreach-object -Begin \{$i=0; $hash=@{}{} -Process {
 	if (i$ -ge 4) {
 	[PSCustomObject]$hash
 	$hash.Clear()
